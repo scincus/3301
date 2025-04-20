@@ -9,6 +9,7 @@
       background: #000;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -37,13 +38,28 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
+
+  .hidden-prompt {
+      display: none;
+      font-size: 1.2rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 70%;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
 <canvas id="myCanvas"></canvas>
 <div class="proverb">
-  <h3>scinus desafio</h3>
-  3301@scincus ~ % nao te ofereco ouro ou prata, nem diamantes raros. o que busco entregar eh algo mais raro: o que somente quem tem a verdadeira curiosidade e sagacidade pode descobrir. o que o mundo esconde, e que so aqueles com olhos atentos podem ver.
+  <h3>desafio scincus</h3>
+  3301@scincus ~ % sou scincus, se atente: faca parte disso e estara a frente, sempre a frente. aqui, nao ha recompensas penedes, fisicas, financeiras imediatas. o que consigo oferecer eh o reconhecimento de que voce eh bom o suficiente, e que esse ano sera um ano completamente diferente na sua vida, em troca de sua dedicacao. a dica eh: esteja atento, nem sempre o que voce enxerga, eh constituido somente pelo que enxerga.
+</div>
+
+<div class="hidden-prompt" id="hiddenPrompt">
+  YnlCelpYVWdjSEp2ZUdsdGJ5QmxibU52Ym5SeWJ5QnpaWEpoSUdWdElHaDBkSEJ6T2k4dmMyTnBibU4xY3k1bmFYUm9kV0l1YVc4dk1UYzRPUzhnSUhSdlpHOGdaR2xoSUdWdWRISmxJRGRvSUdVZ01UQm9JR1p2Y21FZ1pYTnpaU0J3WlhKcGIyUnZJR1Z6YzJVZ2MyVnlkbWxrYjNJZ1pYTjBZWEpoSUdSbGMyRjBhWFpoWkc4PQ==
 </div>
 
 <script>
@@ -52,6 +68,23 @@
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
+const promptElement = document.getElementById('hiddenPrompt');
+
+  function cyclePrompt() {
+    setTimeout(() => {
+      setInterval(() => {
+        promptElement.style.display = 'block';
+
+        setTimeout(() => {
+          promptElement.style.display = 'none';
+        }, 5000);
+
+      }, 10000);
+    }, 1200000);
+  }
+
+  cyclePrompt();
 
   class Spider {
     constructor(x, y, size, speed) {
@@ -122,4 +155,5 @@
   animate();
 </script>
 </body>
+<!-- <div class="base64" id="decodifique duas vezes o base64"></div> -->
 </html>
